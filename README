@@ -1,0 +1,22 @@
+docker build -t flasker/api:latest .
+
+docker build -t flasker/frontend:latest .
+
+
+kubectl apply -f mysql-deployment.yml
+
+kubectl exec -it <nombre-del-pod> -- sh
+
+kubectl exec -it <nombre-del-pod> -- sh
+
+mysql -u root -p
+CREATE USER 'appuser'@'%' IDENTIFIED BY 'apppassword';
+GRANT ALL PRIVILEGES ON *.* TO 'appuser'@'%';
+CREATE DATABASE test_db;
+USE test_db;
+CREATE TABLE message (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  text VARCHAR(255) NOT NULL
+);
+INSERT INTO message (text) VALUES ('hola mundo');
+EXIT;
